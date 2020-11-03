@@ -1,28 +1,34 @@
 package com.example.demo.model;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-
-import javax.persistence.*;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 import java.util.Date;
-import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
-@Table(name = "enrollees")
+@Table(name = "Feature")
 public class Feature {
 
+	@Id
+	@Column(name = "Title")
     private String title;
 	
+	@Column(name = "Description")
     private String desc;
 
-    private List<String> clientList;
+	@Column(name = "ClientList")
+    private String clientList;
     
-    private int priority;
+	@Column(name = "Priority")
+    private Integer priority;
     
+	@Column(name = "TargetDate")
     private Date targetDate;
     
-    private List<String> productArea;
+	@Column(name = "ProductArea")
+    private String productArea;
     
     public String getTitle() {
 		return title;
@@ -40,11 +46,11 @@ public class Feature {
 		this.desc = desc;
 	}
 
-	public List<String> getClientList() {
+	public String getClientList() {
 		return clientList;
 	}
 
-	public void setClientList(List<String> clientList) {
+	public void setClientList(String clientList) {
 		this.clientList = clientList;
 	}
 
@@ -64,11 +70,11 @@ public class Feature {
 		this.targetDate = targetDate;
 	}
 
-	public List<String> getProductArea() {
+	public String getProductArea() {
 		return productArea;
 	}
 
-	public void setProductArea(List<String> productArea) {
+	public void setProductArea(String productArea) {
 		this.productArea = productArea;
 	}
 
